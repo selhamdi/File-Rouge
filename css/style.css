@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+body{
+    overflow: hidden;
+}
+.logo
+{
+   margin-top:-15px;
+   width: 200px;
+   height: 40px;
+   margin-left: 30px;
+
+}
+.header-home{
+    width:100%;
+    height :570px;
+    background-repeat: no-repeat;
+    background: url("../images/photo-footer.jpg")center center/cover no-repeat;
+}
+.nav-home{
+    background-color: transparent;
+    border: none;
+}
+.menu{
+    margin-left: 700px;
+}
+.navbar-inverse .navbar-nav li a {
+    color: #FFFFFF;
+    font-size: 20px;
+}
+.navbar-inverse .navbar-nav li li a {
+    color: rgb(102, 102, 102);
+    font-size: 20px;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover{
+    background-color: transparent;
+}
+
+.nvrecette{
+    padding: 12px 40px;
+    border-radius: 25px;
+    background-color: transparent;
+    border-color: white;
+    /* color: rgb(255, 204, 0); */
+    color: white;
+    /* border: none; */
+    margin-top: 10px;
+    font-size: 18px;
+    /* margin-left: 20px; */
+}
+.nvrecette:hover{
+    background-color: white;
+    /* border-color: white; */
+    color: rgb(255, 204, 0);
+    /* color: white; */
+    border: none;
+    /* margin-top: 10px; */
+    /* font-size: 18px; */
+
+}
+
+.header-text{
+    color: white;
+    margin-left: 2%;
+    margin-top: 55px;
+}
+.recherche{
+    margin-left: 3%;
+    margin-top: 5px;
+}
+.recherche input{
+    padding: 14px 20px;
+    padding-right: 60px;
+    border-radius:25px 0px 0px 25px;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-color:rgb(255, 204, 0);
+}
+.recherche select{
+    padding: 17px 20px;
+    margin-left: -5px;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    border-color:rgb(255, 204, 0);
+
+}
+.recherche select option{
+    background-color: white;
+    color:rgb(102, 102, 102);
+    font-size: 20px;
+    border-color:rgb(255, 204, 0);
+}
+
+.btn-s{
+    padding: 20px 20px 16px 20px;
+    margin-left: -6px;
+    margin-top: 10px;
+    border-radius:0px 25px 25px 0px;
+    background-color: rgb(255, 204, 0);
+    border-color: rgb(255, 204, 0);
+}
+.btn-s:hover{
+    background-color: transparent;
+    /* border: rgb(255, 204, 0); */
+}
+.container-fluid {
+    margin-top: 20px;
+}
+.navbar-right
+ {
+  margin-left: 20px;
+}
+.nvrecette{
+    margin-right:30px;
+}
+.navbar-toggle
+{
+border-color:cornflowerblue;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form
+{
+border-color:none;
+}
+
+@media only screen and (max-width: 1700px)
+{
+  .menu
+{ 
+    margin-left: 300px;
+}
+
+}
+
+@media only screen and (max-width: 1400px)
+{
+  .menu
+{ 
+    margin-left: 100px;
+}
+
+}
+@media only screen and (max-width: 1800px)
+{
+  .menu
+{ 
+    margin-left:300px;
+}
+
+}
+@media only screen and (max-width: 1309px)
+{
+  .menu
+{ 
+    margin-left:120px;
+}
+
+
+}
+@media only screen and (max-width:1379px)
+{
+  .menu
+{ 
+    margin-left:100px;
+}
+
+}
+
