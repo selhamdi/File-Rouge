@@ -73,120 +73,166 @@
                     </ul>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
-                    <h1 class="H1">Contactez Nous</h1>
+                    <h1 class="H1">Ajouter Une Recette</h1>
                     <ol class="breadcrumb text-center">
                         <li><a href="../php/menu-home.php">Accueil</a></li>
-                        <li class="active">contactez nous</li>
+                        <li class="active">Ajouter une recette</li>
                     </ol>
                 </div>
             </div>
             </div>
         </nav>
-    </header>
-    <!-- <div>
-    <form action="">
-        <div>
-            <label for=""></label>
-            <input type="text" placeholder="">
-        </div>
-        
-        <div>
-            <label for=""></label>
-            <input type="text" placeholder="">
-        </div>
-        <div>
-            <label for=""></label>
-            <input type="text" placeholder="">
-        </div>
-        <div>
-            <label for=""></label>
-            <input type="text" placeholder="">
-        </div>
-        <div class="form-group styling-checkboxes">
-							<label for="mt-features">Recipe Difficulty</label> <br>				
-								                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-features[]" value="86">
-	                                Advanced	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-features[]" value="85">
-	                                Easy	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-features[]" value="90">
-	                                Intermediate	                                <span class="checkmark"></span>
-	                            </label>
-	                        						</div>
-						<div class="form-group styling-checkboxes">			
-							<label for="mt-tags">Cooking Method</label>	 <br>	
-								                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="160">
-	                                Baking	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="96">
-	                                Braising	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="93">
-	                                Grilling	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="161">
-	                                Roasting	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="94">
-	                                Sautéing	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="95">
-	                                Searing	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="159">
-	                                Steaming	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="97">
-	                                Stewing	                                <span class="checkmark"></span>
-	                            </label>
-	                        	                            <label class="checkbox-inline">
-	                                <input type="checkbox" name="mt-tags[]" value="98">
-	                                Tossing	                                <span class="checkmark"></span>
-	                            </label>
-	                        						</div>
-    </form>
-</div> -->
+</header>
 
-                <div class="row">
-                    <form id="add-new-listing" method="POST">
-                        <div class="form-group">
-                            <label>Recipe Title</label>
-                             <input type="text" value="" placeholder="Your Recipe Title">
-                        </div>
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" placeholder="Enter details about your recipe"></textarea>
-                        </div>
+    <div class="row">
+        <form id="add-new-listing" method="POST">
+            <div class="form-group">
+                <label>Recipe Title</label>
+                <input type="text" value="" placeholder="Your Recipe Title">
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea id="story" name="story" rows="3" cols="33" placeholder="Enter details about your recipe"></textarea>
+            </div>
 
-                        <!-- FORM GROUP: INGREDIENTS -->
-                        <div class="form-group">
-                            <label for="mt-features">Recipe Ingredients</label> <br>
-                            <div class="isiaFormRepeater repeat-section" id="ingredient_name" data-field-id="ingredient_name" data-items-index-array="[1]">
-                                <div class="repeat-items">
-                                    <div class="repeat-item row" data-field-index="1">
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control listing-ingredient_name" name="ingredient_name[]" value="" placeholder="Ingredient. (E.g: 1/2 cup warm water)">
-                                        </div>
-                                    </div>
+            <div class="form-group">
+                <label>Ingrédients de la recette</label>
+                <!-- FORM GROUP: INGREDIENTS -->
+                <SCRIPT LANGUAGE="JavaScript">
+                    function addField() {
+                        var field = "<input type='text' name='champ' value='Ingrédient. (Par exemple: 1/2 tasse d eau tiède)' size='7' maxlength='10'/><br/>";
+                        document.getElementById('fields').innerHTML += field;
+                    }
+                </SCRIPT>
+                <div class="ensemble-input-button">
+                    <div id="fields">
+                        <input name="champ" type="text" value='Ingrédient. (Par exemple: 1/2 tasse d eau tiède)' size="7" maxlength="10"><br />
+                    </div>
+                </div>
+                <input class="button" type="button" value="Ajouter un nouvel ingrédient" onClick="addField();">
+            </div>
+            <!-- </div> -->
+            <div class="form-group">
+                <label for="">Instructions de recette</label>
+                <SCRIPT LANGUAGE="JavaScript">
+                    function addField2() {
+                        var field = "<textarea name='' id='' cols='1' rows='2' placeholder='Instruction: (Oeuf: Cuire au four préchauffé pendant 30 minutes.)' style='text-align: center;'></textarea><br/>";
+                        document.getElementById('fields2').innerHTML += field;
+                    }
+                </SCRIPT>
+                <div class="ensemble-input-button">
+                    <div id="fields2">
+                        <textarea name="" id="" cols="1" rows="2" placeholder="Instruction: (Oeuf: Cuire au four préchauffé pendant 30 minutes.)" style="text-align: center;"></textarea>
+                    </div>
+                </div>
+                <input class="button" type="button" value="Ajouter un nouvel ingrédient" onClick="addField2();">
+            </div>
+            <div class="form-group">
+                <label>Recette Difficulté</label>
+                <input type="checkbox"><span>Avancé</span>
+                <input type="checkbox"><span>Facile</span>
+                <input type="checkbox"><span>Intermédiaire</span>
+            </div>
+            <div class="form-group">
+                <div class="select1">
+
+                <label>Recette Difficulté</label>
+                <input type="checkbox"><span>Braiser </span>
+                <input type="checkbox"> <span> Cuisson</span>
+                <input type="checkbox"><span> gril</span>
+                <input type="checkbox"><span> grillage</span>
+                <input type="checkbox"><span> Brûlant</span>
+                <input type="checkbox"><span> grillage</span>
+                <input type="checkbox"><span> Brûlant</span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div>
+                <div class="container">
+  <div class="row" style="margin-top: 27px;
+">
+    <div class="col-sm-6">
+    <label>Catégorie de recette</label>
+                <select name="pets" id="pet-select">
+                    <option value=""  style="text-align: center;">---Catégorie de recette---</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+    </div>
+    <div class="col-sm-6 other">
+    <label>Catégorie de recette</label>
+                <select name="pets" id="pet-select" style="margin-left: -24%;
+">
+                    <option value="">--Catégorie de recette--</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+    </div>
+  </div>
+</div>
+            </div>
+            <div class="form-group">
+                <label>Lien vidéo</label>
+                <input type="text" value="" placeholder="e.g https://youtu.be/YoxHEBeF6s0">
+                </div>
+
+            <button class="btn-ajt-rct">Ajouter La Recette</button>
+    </div>
+                </form>
+
+                <footer>
+
+    <!-- FOOTER TOP -->
+    <div class="row footer-top">
+        <div class="container">
+            <div class="row" class="row">
+                <div class="col-md-12 footer-row-1">
+                    <div class="row" class="row">
+                        <div class="col-md-12 sidebar-1">
+                            <aside id="text-3" class="widget vc_column_vc_container widget_text">
+                                <div class="textwidget">
+                                    <h2 class="recipe-finder__heading fc-white"
+                                        style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 35px; line-height: 39px;">
+                                        Search for Recipes</h2>
                                 </div>
-                                <button data-repeat-add-btn class="repeat-add pure-button pure-button-primary">Add New Ingredients</button>
+                            </aside>
+                            <aside id="custom_html-3"
+                                class="widget_text widget vc_column_vc_container widget_custom_html">
+                                <div class="textwidget custom-html-widget">
+                                    <div class="mt-car-search wow fadeInUp mtsearchform-style-v2 ">
+                                        <div class="foodhub-header-searchform">
+                                            <form method="GET" action="https://foodhub.modeltheme.com/"
+                                                autocomplete="off">
+                                                <input type="hidden" name="post_type" value="mt_listing" />
+                                                <div class="row">
 
-                            </div>
-                        </div>
-                       
-
+                                                    <div class="recherche">
+                                                        <input type="text" name="motcle" value="Mot clé">
+                                                        <select>
+                                                            <option value="#">Catégorie</option>
+                                                            <option value="#">Cuisine</option>
+                                                            <option value="#">Pâtisserie</option>
+                                                            <option value="#">Déssert</option>
+                                                        </select>
+                                                        <button class="btn-s"><i class="fa fa-search"></i></button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- <div id="datafetch"></div>
+                            </div></div></div></aside></div></div></div></div> 
+                                  </div> -->
+                                        </div>
+</footer>
 </body>
 
 </html>

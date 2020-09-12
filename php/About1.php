@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 </head>
+<body>
 <header class="header-home">
     <nav class="navbar navbar-inverse nav-home ">
         <div class="container-fluid">
@@ -78,10 +79,14 @@
         </div>
     </nav>
 </header>
-<div>
-    <div>
-        <h2 class="section-title">La plus grande communauté de recettes</h2>
+<tbody>
+</div>
+<div class="row">
+<div class="titre-video">
+        <h2 class="section-title" style="margin-top: 20px;">La plus grande communauté de recettes</h2>
     </div>
+</div>
+    
     <div id="main_container">
         <div id="overlay"></div>
         <video id="video" width="" height="" controls="controls" loop="loop" autoplay="">
@@ -194,6 +199,7 @@
             </div>
     </div>
 </div>
+</tbody>
 <footer>
 
     <!-- FOOTER TOP -->
@@ -212,7 +218,7 @@
                                 <div class="textwidget custom-html-widget">
                                     <div class="mt-car-search wow fadeInUp mtsearchform-style-v2 ">
                                         <div class="foodhub-header-searchform">
-                                            <form method="GET" action="https://foodhub.modeltheme.com/" autocomplete="off">
+                                            <form method="GET" action="" autocomplete="off">
                                                 <input type="hidden" name="post_type" value="mt_listing" />
                                                 <div class="row">
 
@@ -233,6 +239,7 @@
                       </div> -->
                                         </div>
 </footer>
+
 
 
 </body>
