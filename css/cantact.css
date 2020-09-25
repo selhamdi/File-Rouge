@@ -543,7 +543,7 @@
           
           .form-cantact input{
             padding: 19px 20px !important;
-            width: 30pc;
+            width: 24pc;
             border-radius: 30px !important;
             background: #fff;
             margin-bottom: 15px !important;
@@ -576,7 +576,7 @@
         }
         .total{
             display: flex;
-            width: 100%;
+            width: 55%;
             margin-top: 6%;
         }
         .flex{
@@ -592,7 +592,7 @@
 
         }
          .form-cantact h1{
-            margin-left: 129px;
+            margin-left: 64px;
             text-transform: capitalize;
             font-weight: bold;
             font-size: 35px;

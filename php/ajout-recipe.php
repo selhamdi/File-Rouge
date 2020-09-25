@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
@@ -87,12 +86,12 @@
     <div class="row">
         <form id="add-new-listing" method="POST">
             <div class="form-group">
-                <label>Recipe Title</label>
-                <input type="text" value="" placeholder="Your Recipe Title">
+                <label>Titre De La Recette</label>
+                <input type="text" value="" placeholder="Titre de la recette">
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea id="story" name="story" rows="3" cols="33" placeholder="Enter details about your recipe"></textarea>
+                <textarea id="story" name="story" rows="3" cols="33" placeholder="Enter details de la recette"></textarea>
             </div>
 
             <div class="form-group">
@@ -133,20 +132,7 @@
                 <input type="checkbox"><span>Facile</span>
                 <input type="checkbox"><span>Intermédiaire</span>
             </div>
-            <div class="form-group">
-                <div class="select1">
-
-                <label>Recette Difficulté</label>
-                <input type="checkbox"><span>Braiser </span>
-                <input type="checkbox"> <span> Cuisson</span>
-                <input type="checkbox"><span> gril</span>
-                <input type="checkbox"><span> grillage</span>
-                <input type="checkbox"><span> Brûlant</span>
-                <input type="checkbox"><span> grillage</span>
-                <input type="checkbox"><span> Brûlant</span>
-                </div>
-
-            </div>
+    
 
             <div class="form-group">
                 <div>
@@ -166,16 +152,16 @@
                 </select>
     </div>
     <div class="col-sm-6 other">
-    <label>Catégorie de recette</label>
+    <label style="margin-left:-120px">Temps de cuisson</label>
                 <select name="pets" id="pet-select" style="margin-left: -24%;
 ">
-                    <option value="">--Catégorie de recette--</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="hamster">Hamster</option>
-                    <option value="parrot">Parrot</option>
-                    <option value="spider">Spider</option>
-                    <option value="goldfish">Goldfish</option>
+                    <option value="">--Temps de cuisson--</option>
+                    <option value="dog">10min</option>
+                    <option value="cat">30min</option>
+                    <option value="hamster">45min</option>
+                    <option value="parrot">60min</option>
+                    <option value="spider">120min</option>
+                    <option value="goldfish">Plus</option>
                 </select>
     </div>
   </div>
@@ -203,7 +189,7 @@
                                 <div class="textwidget">
                                     <h2 class="recipe-finder__heading fc-white"
                                         style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 35px; line-height: 39px;">
-                                        Search for Recipes</h2>
+                                       Recherche de recette</h2>
                                 </div>
                             </aside>
                             <aside id="custom_html-3"

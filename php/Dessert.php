@@ -38,34 +38,28 @@
 
                 <div class="collapse navbar-collapse " id="myNavbar">
                     <ul class="nav navbar-nav menu">
-                        <li><a class="text-white" href="#">Accueil</a></li>
+                        <li><a class="text-white" href="index.php">Accueil</a></li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Cuisine</a></li>
-                                <li><a href="#">Pâtisserie</a></li>
-                                <li><a href="#">Dessert</a></li>
+                            <li><a href="cuisine.php">Cuisine</a></li>
+                                <li><a href="patisiere.php">Pâtisserie</a></li>
+                                <li><a href="dessert.php">Dessert</a></li>
                             </ul>
                         </li>
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#" class="drop">Comment ça marche</a></li>
-                                <li><a href="#">Qui sommes nous?</a></li>
+                            <li><a href="cantact.php" class="drop">Comment ça marche</a></li>
+                <li><a href="About1.php">Qui sommes nous?</a></li>
                             </ul>
                         </li>
-                        <li><a href="#"><i class="fa fa-search" class="openBtn" onclick="openSearch()"> </i></a></li>
-                        <div id="myOverlay" class="overlay">
-                            <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-                            <div class="overlay-content">
-                                <form action="/action_page.php">
-                                    <input type="text" placeholder="Search.." name="search">
-                                    <button type="submit"><i class="fa fa-search"></i></button>
-                                </form>
-                            </div>
-                        </div>
-                        <li><a href="login.php"><i class="fa fa-user-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+                        <?php session_start(); if(isset($_SESSION['ID'])): ?>
+              <li><a href="../Traitement/logout.php"><i class="fa fa-sign-out"></i></a></li>
+            <?php else: ?>
+              <li><a href="Authe.php"><i class="fa fa-user-plus"></i></a></li>
+            <?php endif; ?>
+                        <li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -107,196 +101,47 @@
                 </div>
                 <div class="container my-5">
                     <div class="row row-eq-height">
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
+                    <?php
+
+include 'db.php';
+$sql = "select * from recette where category='Desserts';";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+     
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+  
+  ?>
+
+                            <form action="" method="POST">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
                             <div class="product-card h-100 mb-0">
                                 <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2017-08-03/i131275-tarte-au-citron-au-thermomix.jpeg)'></span>
+                                    <span class="product-card__img" style='background-image:url(../images/<?php echo $row["image"] ?>)'></span>
                                     <span class="product-card__title">
-                                    Tarte au citron au Thermomix
+                                    <?php echo $row["name"] ?>
+                                    
                                     </span>
                                     <span class="product-card__price">
-                                        $49.99
+                                    $ <?php echo $row["prix"] ?>
                                     </span>
                                 </a>
                                 <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
+                                    <a class="product-card__btn mr-3" href="details.php?id=<?php echo $row['id']?>&&idU=<?php echo $_SESSION['ID']?>">
                                         <i class="fas fa-plus mr-2"></i>
-                                       Ajouter au panier
-                                    </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
+                                        View </a>
+                                  
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2018-03-18/i136359-tarte-aux-pommes-sans-oeufs-a-ma-facon-facile.jpeg)'></span>
-                                    <span class="product-card__title">
-                                    Tarte aux pommes sans oeufs à ma façon facile
-                                    </span>
-                                    <span class="product-card__price">
-                                        $24.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                     Ajouter au panier
-                                    </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2020-07-07/i154491-shutterstock-348208976.jpeg)'></span>
-                                    <span class="product-card__title">
-                                    Tiramisu au robot pâtissier </span>
-                                    <span class="product-card__price">
-                                        $19.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2016-04-28/i100003-tiramisu-au-speculoos.jpg)'></span>
-                                    <span class="product-card__title">
-                                    Tiramisu au spéculoos
-                                    </span>
-                                    <span class="product-card__price">
-                                        $49.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2017-06-22/i130079-tiramisu-aux-fraises-en-verrine.jpeg)'></span>
-                                    <span class="product-card__title">
-                                    Tiramisu aux fraises en verrine
-                                    </span>
-                                    <span class="product-card__price">
-                                        $49.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2015-08-31/i86523-biscuit-petit-prince-fait-maison.jpg)'></span>
-                                    <span class="product-card__title">
-                                    Biscuit Petit prince fait maison
-                                    </span>
-                                    <span class="product-card__price">
-                                        $45.00
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2017-11-01/i133702-granola-sans-gluten.jpeg)'></span>
-                                    <span class="product-card__title">
-                                
-                                    Granola sans gluten                                  </span>
-                                    <span class="product-card__price">
-                                        $49.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2017-08-15/i131581-glace-italienne-au-thermomix.jpeg)'></span>
-                                    <span class="product-card__title">
-                                    Glace italienne au Thermomix                                   </span>
-                                    <span class="product-card__price">
-                                        $49.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-                                        Ajouter au panier                                     </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5">
-                            <div class="product-card h-100 mb-0">
-                                <a class="product-card__content" href="#">
-                                    <span class="product-card__img" style='background-image:url(https://img.cuisineaz.com/660x660/2018-04-23/i139664-gateau-aux-3-chocolats-au-thermomix.jpeg)'></span>
-                                    <span class="product-card__title">
-                                    Gâteau 3 chocolats                                  </span>
-                                    <span class="product-card__price">
-                                        $49.99
-                                    </span>
-                                </a>
-                                <div class="product-card__actions">
-                                    <a class="product-card__btn mr-3" href="#">
-                                        <i class="fas fa-plus mr-2"></i>
-Ajouter au panier                                    </a>
-                                    <!-- <a class="product-card__icon-btn" href="#">
-                                        <i class="fas fa-heart"></i>
-                                    </a> -->
-                                </div>
-                            </div>
-                        </div>
+                        </form>
+ <?php 
+
+                    }
+} 
+$con->close();
+?>                 
                     </div>
                 </div>
                 <div class="button-bar">
@@ -314,37 +159,10 @@ Ajouter au panier                                    </a>
                     <div class="col-md-12 sidebar-1">
                         <aside id="text-3" class="widget vc_column_vc_container widget_text">
                             <div class="textwidget">
-                                <h2 class="recipe-finder__heading fc-white"
-                                    style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 35px; line-height: 39px;">
-                                    Search for Recipes</h2>
                             </div>
                         </aside>
-                        <aside id="custom_html-3"
-                            class="widget_text widget vc_column_vc_container widget_custom_html">
-                            <div class="textwidget custom-html-widget">
-                                <div class="mt-car-search wow fadeInUp mtsearchform-style-v2 ">
-                                    <div class="foodhub-header-searchform">
-                                        <form method="GET" action="https://foodhub.modeltheme.com/"
-                                            autocomplete="off">
-                                            <input type="hidden" name="post_type" value="mt_listing" />
-                                            <div class="row">
-
-                                                <div class="recherche">
-                                                    <input type="text" name="motcle" value="Mot clé">
-                                                    <select>
-                                                        <option value="#">Catégorie</option>
-                                                        <option value="#">Cuisine</option>
-                                                        <option value="#">Pâtisserie</option>
-                                                        <option value="#">Déssert</option>
-                                                    </select>
-                                                    <button class="btn-s"><i class="fa fa-search"></i></button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <!-- <div id="datafetch"></div>
-                        </div></div></div></aside></div></div></div></div> 
-                              </div> -->
-                                    </div>
+                       
+                   
 </footer>
 </body>
 

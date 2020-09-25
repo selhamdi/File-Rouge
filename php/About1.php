@@ -34,34 +34,28 @@
 
             <div class="collapse navbar-collapse " id="myNavbar">
                 <ul class="nav navbar-nav menu">
-                    <li><a class="text-white" href="#">Accueil</a></li>
+                    <li><a class="text-white" href="index.php">Accueil</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catégories <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Cuisine</a></li>
-                            <li><a href="#">Pâtisserie</a></li>
-                            <li><a href="#">Dessert</a></li>
+                        <li><a href="cuisine.php">Cuisine</a></li>
+                                <li><a href="patisiere.php">Pâtisserie</a></li>
+                                <li><a href="dessert.php">Dessert</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pages <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#" class="drop">Comment ça marche</a></li>
-                            <li><a href="#">Qui sommes nous?</a></li>
+                        <li><a href="cantact.php" class="drop">Comment ça marche</a></li>
+                            <li><a href="About1.php">Qui sommes nous?</a></li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="fa fa-search" class="openBtn" onclick="openSearch()"> </i></a></li>
-                    <div id="myOverlay" class="overlay">
-                        <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
-                        <div class="overlay-content">
-                            <form action="/action_page.php">
-                                <input type="text" placeholder="Search.." name="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                    <li><a href="login.php"><i class="fa fa-user-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-basket"></i></a></li>
+                    <?php session_start(); if(isset($_SESSION['User'])): ?>
+              <li><a href="../Traitement/logout.php"><i class="fa fa-sign-out"></i></a></li>
+            <?php else: ?>
+              <li><a href="Authe.php"><i class="fa fa-user-plus"></i></a></li>
+            <?php endif; ?>
+                    <li><a href="panier.php"><i class="fa fa-shopping-basket"></i></a></li>
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -82,7 +76,7 @@
 <tbody>
 </div>
 <div class="row">
-<div class="titre-video">
+<div class="titre-video" style="    margin-top: 30%;">
         <h2 class="section-title" style="margin-top: 20px;">La plus grande communauté de recettes</h2>
     </div>
 </div>
@@ -211,33 +205,9 @@
                         <div class="col-md-12 sidebar-1">
                             <aside id="text-3" class="widget vc_column_vc_container widget_text">
                                 <div class="textwidget">
-                                    <h2 class="recipe-finder__heading fc-white" style="color: #fff; margin-bottom: 20px; text-align: center; font-size: 35px; line-height: 39px;">Search for Recipes</h2>
                                </div>
                             </aside>
-                            <aside id="custom_html-3" class="widget_text widget vc_column_vc_container widget_custom_html">
-                                <div class="textwidget custom-html-widget">
-                                    <div class="mt-car-search wow fadeInUp mtsearchform-style-v2 ">
-                                        <div class="foodhub-header-searchform">
-                                            <form method="GET" action="" autocomplete="off">
-                                                <input type="hidden" name="post_type" value="mt_listing" />
-                                                <div class="row">
-
-                                                    <div class="recherche">
-                                                        <input type="text" name="motcle" value="Mot clé">
-                                                        <select>
-                                                            <option value="#">Catégorie</option>
-                                                            <option value="#">Cuisine</option>
-                                                            <option value="#">Pâtisserie</option>
-                                                            <option value="#">Déssert</option>
-                                                        </select>
-                                                        <button class="btn-s"><i class="fa fa-search"></i></button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                            <!-- <div id="datafetch"></div>
-                </div></div></div></aside></div></div></div></div> 
-                      </div> -->
-                                        </div>
+                         
 </footer>
 
 
