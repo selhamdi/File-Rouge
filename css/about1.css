@@ -2,9 +2,11 @@
     margin: 0px ;
     padding: 0px  ;
     box-sizing: border-box;
+   
   }
   body{
     margin-top: 0px;
+    /* overflow-x: hidden; */
   }
 .logo
 {
@@ -18,7 +20,7 @@
     /* margin-bottom: 94px; */
     margin-top: 0px;
     width:100%;
-    height :500px;
+    height :400px;
     background-repeat: no-repeat;
     float: right;
     background: url("../images/photo-footer.jpg") center center/cover no-repeat;
@@ -212,7 +214,7 @@ a {
     font-family: "Signika";
 }
 .middle{
-    margin-top: 500px;
+   margin-top: 26%;
     left: 0px;
     position: absolute;
     top: 100%;
@@ -344,8 +346,8 @@ h1, h1 span {
     line-height: 30px;
     color: #528f2d;
 }
-body {
-    margin-top: -20px;}
+/* body {
+    margin-top: -20px;} */
 
 video {
   position: fixed;
@@ -541,5 +543,24 @@ p a.orange {
           footer .footer-top h1.widget-title, footer .footer-top h3.widget-title, footer .footer-top .widget-title
           {color:#ffffff;}
           .footer-row-1{padding-top:80px;padding-bottom:80px;}
-          .footer-row-1{margin-top:0;margin-bottom:0;}.footer-row-1{border-top:0px solid #515b5e;border-bottom:0px solid #515b5e;border-left:0px solid #515b5e;border-right:0px solid #515b5e;}footer .footer-div-parent{background-color:#528f2d;}footer .footer h1.widget-title, footer .footer h3.widget-title, footer .footer .widget-title{color:#ffffff;}
-          
+         .footer-row-1{margin-top:0;margin-bottom:0;}.footer-row-1{border-top:0px solid #515b5e;border-bottom:0px solid #515b5e;border-left:0px solid #515b5e;border-right:0px solid #515b5e;}footer .footer-div-parent{background-color:#528f2d;}footer .footer h1.widget-title, footer .footer h3.widget-title, footer .footer .widget-title{color:#ffffff;}
+@media (min-width: 1200px){
+            /* .titre-video {        
+    margin-top: 33%;
+            }
+            .middle {
+              margin-top: 49%;
+          }          */
+        }  
+ @media (min-width: 1200px){  
+  /* .middle 
+  {
+    margin-top: 47%;
+  }  
+  .titre-video h2
+  {  margin-top: -7%; 
+  }  
+  .titreimage {
+    margin-top: 81%;  */
+}
+}

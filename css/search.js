@@ -16,4 +16,11 @@ function openSearch() {
 
 
 
-    
+function togglePopup() {
+  document.getElementById("back-login").style.display = "block";
+}
+
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+
